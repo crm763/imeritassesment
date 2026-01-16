@@ -1,0 +1,342 @@
+/* ===== Base / reset (mobile-first) ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #0f172a; /* dark outer bg, mobile friendly contrast */
+    color: #111827;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+/* ===== App container (mobile width primary) ===== */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 480px;           /* lock width suitable for mobile */
+    min-height: 100vh;
+    background: #f9fafb;
+}
+
+/* ===== Header ===== */
+.app-header {
+    display: flex;
+    flex-direction: column;     /* stack on mobile */
+    gap: 4px;
+    padding: 10px 12px;
+    border-bottom: 1px solid #e5e7eb;
+    background: #111827;
+    color: #f9fafb;
+}
+
+.header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.exam-title {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.exam-subtitle {
+    font-size: 0.78rem;
+    opacity: 0.7;
+}
+
+.header-center {
+    margin-top: 2px;
+}
+
+.question-progress {
+    font-size: 0.82rem;
+    padding: 4px 9px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(148, 163, 184, 0.7);
+}
+
+.header-right {
+    margin-top: 2px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.timer-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.timer-label {
+    font-size: 0.7rem;
+    opacity: 0.8;
+}
+
+.timer-value {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* ===== Main (mobile) ===== */
+.app-main {
+    flex: 1;
+    padding: 10px 10px 12px;
+    background: #e5e7eb;
+}
+
+/* Question card */
+.card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 12px 10px;
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Question meta */
+.question-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.question-number-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.question-type-label {
+    font-size: 0.7rem;
+    padding: 2px 7px;
+    border-radius: 999px;
+    background: #eef2ff;
+    color: #3730a3;
+    border: 1px solid #e0e7ff;
+}
+
+/* Question text */
+.question-text {
+    font-size: 0.9rem;
+    line-height: 1.45;
+    color: #111827;
+}
+
+/* Answer options */
+.answer-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.option-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 8px 9px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.option-item:active {
+    background: #eef2ff;
+    border-color: #6366f1;
+}
+
+.option-input {
+    margin-top: 1px;
+}
+
+.option-label {
+    font-size: 0.88rem;
+    color: #111827;
+}
+
+/* Validation */
+.validation-message {
+    min-height: 18px;
+    font-size: 0.8rem;
+    color: #b91c1c;
+}
+
+/* ===== Footer (mobile buttons full-width) ===== */
+.app-footer {
+    padding: 8px 10px 10px;
+    border-top: 1px solid #e5e7eb;
+    background: #f3f4f6;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.footer-left {
+    font-size: 0.8rem;
+    color: #4b5563;
+}
+
+.footer-right {
+    display: flex;
+    gap: 6px;
+}
+
+/* Buttons */
+.btn {
+    border: none;
+    border-radius: 999px;
+    padding: 9px 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    flex: 1;                         /* full-width on mobile */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.btn-primary {
+    background: #4f46e5;
+    color: #f9fafb;
+}
+
+.btn-primary:active {
+    background: #4338ca;
+    transform: translateY(1px);
+}
+
+.btn-secondary {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+.btn-secondary:active {
+    background: #d1d5db;
+    transform: translateY(1px);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Submit button hidden until last question */
+.btn-submit {
+    display: none;
+}
+
+/* ===== Thank you screen ===== */
+.thankyou-screen {
+    display: none;
+    margin-top: 8px;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.1);
+    padding: 20px 16px;
+    text-align: center;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+}
+
+.thankyou-screen h2 {
+    font-size: 1.2rem;
+    color: #111827;
+}
+
+.thankyou-screen p {
+    font-size: 0.9rem;
+    color: #4b5563;
+}
+
+/* ===== Popup overlay & modal (mobile centered) ===== */
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.65);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+}
+
+.popup-overlay.active {
+    display: flex;
+    animation: overlayFadeIn 0.2s ease-out forwards;
+}
+
+.popup-modal {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 18px 16px 14px;
+    width: 90%;
+    max-width: 360px;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.35);
+    transform: scale(0.9);
+    opacity: 0;
+    animation: modalScaleIn 0.26s ease-out forwards;
+}
+
+.popup-header {
+    margin-bottom: 6px;
+}
+
+.popup-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+.popup-body {
+    font-size: 0.9rem;
+    color: #4b5563;
+    margin-bottom: 14px;
+}
+
+.popup-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Animations */
+@keyframes overlayFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes modalScaleIn {
+    0%   { opacity: 0; transform: scale(0.86) translateY(10px); }
+    60%  { opacity: 1; transform: scale(1.02) translateY(0); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* ===== Slight enhancement for bigger screens (optional) ===== */
+@media (min-width: 768px) {
+    .app-container {
+        max-width: 520px;
+        margin: 16px auto;
+        border-radius: 12px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    }
+}
