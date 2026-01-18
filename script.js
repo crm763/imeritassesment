@@ -1,388 +1,96 @@
-// ===============================
-// Exam data configuration
-// ===============================
-
-const questions = [
-  {
-    id: 1,
-    text: "What is data annotation?",
-    type: "mcq",
-    required: true,
-    options: [
-      "Data deletion",
-      "Data labeling for ML models",
-      "Data compression",
-      "Data encryption"
-    ]
-  },
-  {
-    id: 2,
-    text: "Why is data annotation important?",
-    type: "mcq",
-    required: true,
-    options: [
-      "To increase internet speed",
-      "To train machine learning models",
-      "To store data",
-      "To secure data"
-    ]
-  },
-  {
-    id: 3,
-    text: "Which type of data is commonly annotated?",
-    type: "mcq",
-    required: true,
-    options: ["Images", "Text", "Audio", "All of the above"]
-  },
-  {
-    id: 4,
-    text: "Bounding boxes are mainly used in:",
-    type: "mcq",
-    required: true,
-    options: ["Text labeling", "Image classification", "Object detection", "Data cleaning"]
-  },
-  {
-    id: 5,
-    text: "What is image annotation?",
-    type: "mcq",
-    required: true,
-    options: ["Editing photos", "Adding labels to images", "Compressing images", "Uploading images"]
-  },
-  {
-    id: 6,
-    text: "What does NLP stand for?",
-    type: "mcq",
-    required: true,
-    options: [
-      "Neural Learning Process",
-      "Natural Language Processing",
-      "Network Language Protocol",
-      "New Learning Program"
-    ]
-  },
-  {
-    id: 7,
-    text: "Which tool is commonly used for annotation?",
-    type: "mcq",
-    required: true,
-    options: ["MS Word", "Excel", "LabelImg", "PowerPoint"]
-  },
-  {
-    id: 8,
-    text: "What is semantic segmentation?",
-    type: "mcq",
-    required: true,
-    options: [
-      "Dividing text into words",
-      "Labeling entire images",
-      "Pixel-wise classification",
-      "Audio splitting"
-    ]
-  },
-  {
-    id: 9,
-    text: "What is OCR related to?",
-    type: "mcq",
-    required: true,
-    options: [
-      "Audio recognition",
-      "Image detection",
-      "Text extraction from images",
-      "Video editing"
-    ]
-  },
-  {
-    id: 10,
-    text: "What is data quality?",
-    type: "mcq",
-    required: true,
-    options: [
-      "Speed of internet",
-      "Accuracy and consistency of data",
-      "Size of data",
-      "Color of data"
-    ]
-  },
-  {
-    id: 11,
-    text: "What is annotation guideline?",
-    type: "mcq",
-    required: true,
-    options: ["Software manual", "Rules for labeling data", "Internet policy", "Project budget"]
-  },
-  {
-    id: 12,
-    text: "Which format is common for annotated data?",
-    type: "mcq",
-    required: true,
-    options: ["JPG", "PNG", "JSON", "MP3"]
-  },
-  {
-    id: 13,
-    text: "What is sentiment analysis?",
-    type: "mcq",
-    required: true,
-    options: ["Detecting objects", "Finding emotions in text", "Image resizing", "Audio filtering"]
-  },
-  {
-    id: 14,
-    text: "What is entity recognition?",
-    type: "mcq",
-    required: true,
-    options: [
-      "Finding colors",
-      "Finding names, places, dates",
-      "Image cropping",
-      "Audio trimming"
-    ]
-  },
-  {
-    id: 15,
-    text: "What is audio annotation used for?",
-    type: "mcq",
-    required: true,
-    options: [
-      "Music creation",
-      "Speech recognition training",
-      "File compression",
-      "Virus detection"
-    ]
-  },
-  {
-    id: 16,
-    text: "What is polygon annotation used for?",
-    type: "mcq",
-    required: true,
-    options: [
-      "Square objects only",
-      "Circular objects",
-      "Irregular shaped objects",
-      "Text labeling"
-    ]
-  },
-  {
-    id: 17,
-    text: "What does QA mean in data annotation?",
-    type: "mcq",
-    required: true,
-    options: ["Quick Access", "Quality Assurance", "Question Answer", "Quantum Analysis"]
-  },
-  {
-    id: 18,
-    text: "What is inter-annotator agreement?",
-    type: "mcq",
-    required: true,
-    options: [
-      "Internet speed",
-      "Tool compatibility",
-      "Consistency between annotators",
-      "Data size"
-    ]
-  },
-  {
-    id: 19,
-    text: "What is classification annotation?",
-    type: "mcq",
-    required: true,
-    options: ["Drawing boxes", "Assigning category labels", "Removing noise", "Encrypting data"]
-  },
-  {
-    id: 20,
-    text: "What is transcription?",
-    type: "mcq",
-    required: true,
-    options: [
-      "Image editing",
-      "Converting speech to text",
-      "File transfer",
-      "Data backup"
-    ]
-  },
-  {
-    id: 21,
-    text: "What is tagging?",
-    type: "mcq",
-    required: true,
-    options: ["Deleting data", "Adding labels", "Compressing data", "Encrypting data"]
-  },
-  {
-    id: 22,
-    text: "Which industry uses data annotation heavily?",
-    type: "mcq",
-    required: true,
-    options: ["AI & ML", "Agriculture only", "Banking only", "Sports only"]
-  },
-  {
-    id: 23,
-    text: "What is a dataset?",
-    type: "mcq",
-    required: true,
-    options: ["Single file", "Collection of data", "Software", "Hardware"]
-  },
-  {
-    id: 24,
-    text: "What is active learning?",
-    type: "mcq",
-    required: true,
-    options: ["Human training", "Model selects data to label", "Data deletion", "File sharing"]
-  },
-  {
-    id: 25,
-    text: "What is data preprocessing?",
-    type: "mcq",
-    required: true,
-    options: [
-      "Final testing",
-      "Cleaning and preparing data",
-      "Model deployment",
-      "Result sharing"
-    ]
-  },
-  {
-    id: 26,
-    text: "What is overfitting?",
-    type: "mcq",
-    required: true,
-    options: [
-      "Model performs well on all data",
-      "Model memorizes training data only",
-      "Data is lost",
-      "Data is encrypted"
-    ]
-  },
-  {
-    id: 27,
-    text: "What is ground truth?",
-    type: "mcq",
-    required: true,
-    options: ["Fake data", "Predicted data", "Correct labeled data", "Random data"]
-  },
-  {
-    id: 28,
-    text: "What is annotation accuracy?",
-    type: "mcq",
-    required: true,
-    options: ["Speed of labeling", "Correctness of labels", "Data size", "Tool type"]
-  },
-  {
-    id: 29,
-    text: "What is metadata?",
-    type: "mcq",
-    required: true,
-    options: ["Raw data", "Data about data", "Deleted data", "Image data only"]
-  },
-  {
-    id: 30,
-    text: "What is spam classification?",
-    type: "mcq",
-    required: true,
-    options: [
-      "Image editing",
-      "Audio labeling",
-      "Classifying messages as spam or not",
-      "Video cutting"
-    ]
-  },
-  {
-    id: 31,
-    text: "What is chatbot training based on?",
-    type: "mcq",
-    required: true,
-    options: ["Random data", "Annotated conversations", "Images only", "Hardware"]
-  },
-  {
-    id: 32,
-    text: "What is data validation?",
-    type: "mcq",
-    required: true,
-    options: ["Data deletion", "Checking data correctness", "Data compression", "Data hiding"]
-  },
-  {
-    id: 33,
-    text: "What is a label?",
-    type: "mcq",
-    required: true,
-    options: ["File name", "Data category", "Software", "Hardware"]
-  },
-  {
-    id: 34,
-    text: "What is image classification?",
-    type: "mcq",
-    required: true,
-    options: ["Drawing boxes", "Labeling whole image", "Pixel labeling", "Audio tagging"]
-  },
-  {
-    id: 35,
-    text: "What is bias in data?",
-    type: "mcq",
-    required: true,
-    options: [
-      "Balanced data",
-      "Incorrect file format",
-      "Unfair data representation",
-      "Fast processing"
-    ]
-  },
-  {
-    id: 36,
-    text: "What is training data?",
-    type: "mcq",
-    required: true,
-    options: ["Test data", "Data used to train model", "Deleted data", "Backup data"]
-  },
-  {
-    id: 37,
-    text: "What is test data?",
-    type: "mcq",
-    required: true,
-    options: ["Data for model training", "Data for evaluation", "Raw data", "Fake data"]
-  },
-  {
-    id: 38,
-    text: "What is annotation tool?",
-    type: "mcq",
-    required: true,
-    options: [
-      "Hardware device",
-      "Software for labeling data",
-      "Network tool",
-      "Antivirus"
-    ]
-  },
-  {
-    id: 39,
-    text: "What is data consistency?",
-    type: "mcq",
-    required: true,
-    options: [
-      "Same internet speed",
-      "Same labels across data",
-      "Same file size",
-      "Same color"
-    ]
-  },
-  {
-    id: 40,
-    text: "What is crowd-sourcing in annotation?",
-    type: "mcq",
-    required: true,
-    options: [
-      "Data deletion",
-      "Automated labeling",
-      "Using many people to label data",
-      "Model training"
-    ]
-  }
-];
-
-// Timer: 30 minutes
+// ===== Timer: 60 minutes =====
 const TOTAL_TIME_SECONDS = 60 * 60;
+
+// ===== Questions (same 40 MCQs as earlier) =====
+const questions = [
+  { id: 1, text: "What is data annotation?", type: "mcq", required: true,
+    options: ["Data deletion","Data labeling for ML models","Data compression","Data encryption"] },
+  { id: 2, text: "Why is data annotation important?", type: "mcq", required: true,
+    options: ["To increase internet speed","To train machine learning models","To store data","To secure data"] },
+  { id: 3, text: "Which type of data is commonly annotated?", type: "mcq", required: true,
+    options: ["Images","Text","Audio","All of the above"] },
+  { id: 4, text: "Bounding boxes are mainly used in:", type: "mcq", required: true,
+    options: ["Text labeling","Image classification","Object detection","Data cleaning"] },
+  { id: 5, text: "What is image annotation?", type: "mcq", required: true,
+    options: ["Editing photos","Adding labels to images","Compressing images","Uploading images"] },
+  { id: 6, text: "What does NLP stand for?", type: "mcq", required: true,
+    options: ["Neural Learning Process","Natural Language Processing","Network Language Protocol","New Learning Program"] },
+  { id: 7, text: "Which tool is commonly used for annotation?", type: "mcq", required: true,
+    options: ["MS Word","Excel","LabelImg","PowerPoint"] },
+  { id: 8, text: "What is semantic segmentation?", type: "mcq", required: true,
+    options: ["Dividing text into words","Labeling entire images","Pixel-wise classification","Audio splitting"] },
+  { id: 9, text: "What is OCR related to?", type: "mcq", required: true,
+    options: ["Audio recognition","Image detection","Text extraction from images","Video editing"] },
+  { id: 10, text: "What is data quality?", type: "mcq", required: true,
+    options: ["Speed of internet","Accuracy and consistency of data","Size of data","Color of data"] },
+  { id: 11, text: "What is annotation guideline?", type: "mcq", required: true,
+    options: ["Software manual","Rules for labeling data","Internet policy","Project budget"] },
+  { id: 12, text: "Which format is common for annotated data?", type: "mcq", required: true,
+    options: ["JPG","PNG","JSON","MP3"] },
+  { id: 13, text: "What is sentiment analysis?", type: "mcq", required: true,
+    options: ["Detecting objects","Finding emotions in text","Image resizing","Audio filtering"] },
+  { id: 14, text: "What is entity recognition?", type: "mcq", required: true,
+    options: ["Finding colors","Finding names, places, dates","Image cropping","Audio trimming"] },
+  { id: 15, text: "What is audio annotation used for?", type: "mcq", required: true,
+    options: ["Music creation","Speech recognition training","File compression","Virus detection"] },
+  { id: 16, text: "What is polygon annotation used for?", type: "mcq", required: true,
+    options: ["Square objects only","Circular objects","Irregular shaped objects","Text labeling"] },
+  { id: 17, text: "What does QA mean in data annotation?", type: "mcq", required: true,
+    options: ["Quick Access","Quality Assurance","Question Answer","Quantum Analysis"] },
+  { id: 18, text: "What is inter-annotator agreement?", type: "mcq", required: true,
+    options: ["Internet speed","Tool compatibility","Consistency between annotators","Data size"] },
+  { id: 19, text: "What is classification annotation?", type: "mcq", required: true,
+    options: ["Drawing boxes","Assigning category labels","Removing noise","Encrypting data"] },
+  { id: 20, text: "What is transcription?", type: "mcq", required: true,
+    options: ["Image editing","Converting speech to text","File transfer","Data backup"] },
+  { id: 21, text: "What is tagging?", type: "mcq", required: true,
+    options: ["Deleting data","Adding labels","Compressing data","Encrypting data"] },
+  { id: 22, text: "Which industry uses data annotation heavily?", type: "mcq", required: true,
+    options: ["AI & ML","Agriculture only","Banking only","Sports only"] },
+  { id: 23, text: "What is a dataset?", type: "mcq", required: true,
+    options: ["Single file","Collection of data","Software","Hardware"] },
+  { id: 24, text: "What is active learning?", type: "mcq", required: true,
+    options: ["Human training","Model selects data to label","Data deletion","File sharing"] },
+  { id: 25, text: "What is data preprocessing?", type: "mcq", required: true,
+    options: ["Final testing","Cleaning and preparing data","Model deployment","Result sharing"] },
+  { id: 26, text: "What is overfitting?", type: "mcq", required: true,
+    options: ["Model performs well on all data","Model memorizes training data only","Data is lost","Data is encrypted"] },
+  { id: 27, text: "What is ground truth?", type: "mcq", required: true,
+    options: ["Fake data","Predicted data","Correct labeled data","Random data"] },
+  { id: 28, text: "What is annotation accuracy?", type: "mcq", required: true,
+    options: ["Speed of labeling","Correctness of labels","Data size","Tool type"] },
+  { id: 29, text: "What is metadata?", type: "mcq", required: true,
+    options: ["Raw data","Data about data","Deleted data","Image data only"] },
+  { id: 30, text: "What is spam classification?", type: "mcq", required: true,
+    options: ["Image editing","Audio labeling","Classifying messages as spam or not","Video cutting"] },
+  { id: 31, text: "What is chatbot training based on?", type: "mcq", required: true,
+    options: ["Random data","Annotated conversations","Images only","Hardware"] },
+  { id: 32, text: "What is data validation?", type: "mcq", required: true,
+    options: ["Data deletion","Checking data correctness","Data compression","Data hiding"] },
+  { id: 33, text: "What is a label?", type: "mcq", required: true,
+    options: ["File name","Data category","Software","Hardware"] },
+  { id: 34, text: "What is image classification?", type: "mcq", required: true,
+    options: ["Drawing boxes","Labeling whole image","Pixel labeling","Audio tagging"] },
+  { id: 35, text: "What is bias in data?", type: "mcq", required: true,
+    options: ["Balanced data","Incorrect file format","Unfair data representation","Fast processing"] },
+  { id: 36, text: "What is training data?", type: "mcq", required: true,
+    options: ["Test data","Data used to train model","Deleted data","Backup data"] },
+  { id: 37, text: "What is test data?", type: "mcq", required: true,
+    options: ["Data for model training","Data for evaluation","Raw data","Fake data"] },
+  { id: 38, text: "What is annotation tool?", type: "mcq", required: true,
+    options: ["Hardware device","Software for labeling data","Network tool","Antivirus"] },
+  { id: 39, text: "What is data consistency?", type: "mcq", required: true,
+    options: ["Same internet speed","Same labels across data","Same file size","Same color"] },
+  { id: 40, text: "What is crowd-sourcing in annotation?", type: "mcq", required: true,
+    options: ["Data deletion","Automated labeling","Using many people to label data","Model training"] }
+];
 
 // ===== State =====
 let currentIndex = 0;
 let answers = {};
 let timerRemaining = TOTAL_TIME_SECONDS;
 let timerIntervalId = null;
+let candidate = null; // login details (if tum baad me backend me bhejna chaho)
 
 // ===== DOM =====
 const questionProgressEl = document.getElementById("question-progress");
@@ -401,15 +109,77 @@ const popupOverlayEl = document.getElementById("popup-overlay");
 const popupSummaryEl = document.getElementById("popup-summary");
 const popupOkBtn = document.getElementById("popup-ok-btn");
 
+const loginCardEl = document.getElementById("login-card");
+const loginFormEl = document.getElementById("login-form");
+const loginErrorEl = document.getElementById("login-error");
+
 const questionCardEl = document.getElementById("question-card");
 const thankyouScreenEl = document.getElementById("thankyou-screen");
 const appFooterEl = document.querySelector(".app-footer");
 const appHeaderEl = document.querySelector(".app-header");
 
 // ===== Init =====
-initExam();
+initApp();
 
-function initExam() {
+function initApp() {
+  // start: only login visible
+  questionCardEl.style.display = "none";
+  thankyouScreenEl.style.display = "none";
+  appFooterEl.style.display = "none";
+  questionProgressEl.textContent = "";
+
+  loginFormEl.addEventListener("submit", handleLoginSubmit);
+}
+
+// ===== Login handling =====
+function handleLoginSubmit(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("candidate-name").value.trim();
+  const mobile = document.getElementById("candidate-mobile").value.trim();
+  const email = document.getElementById("candidate-email").value.trim();
+  const aadhaar = document.getElementById("candidate-aadhaar").value.trim();
+
+  // basic validation (sab required)
+  if (!name || !mobile || !email || !aadhaar) {
+    loginErrorEl.textContent = "All fields are required.";
+    return;
+  }
+
+  if (!/^[0-9]{10}$/.test(mobile)) {
+    loginErrorEl.textContent = "Please enter a valid 10 digit mobile number.";
+    return;
+  }
+
+  if (!/^[0-9]{12}$/.test(aadhaar)) {
+    loginErrorEl.textContent = "Please enter a valid 12 digit Aadhaar number.";
+    return;
+  }
+
+  // HTML email type already basic validate karega, but thoda extra:
+  if (!email.includes("@") || !email.includes(".")) {
+    loginErrorEl.textContent = "Please enter a valid email address.";
+    return;
+  }
+
+  loginErrorEl.textContent = "";
+
+  candidate = { name, mobile, email, aadhaar };
+
+  // Move to exam
+  startExam();
+}
+
+function startExam() {
+  loginCardEl.style.display = "none";
+  questionCardEl.style.display = "flex";
+  appFooterEl.style.display = "flex";
+
+  // reset state
+  currentIndex = 0;
+  answers = {};
+  timerRemaining = TOTAL_TIME_SECONDS;
+
   renderQuestion(currentIndex);
   updateNavButtons();
   startTimer();
@@ -594,7 +364,7 @@ function closePopup() {
   showFinalThankYou();
 }
 
-// After final submit: clear questions, show thank you (good for mobile)
+// After final submit: clear questions, show thank you
 function showFinalThankYou() {
   answers = {};
   currentIndex = 0;
